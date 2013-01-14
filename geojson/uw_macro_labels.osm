@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' upload='true' generator='JOSM'>
+  <node id='-20312' action='modify' visible='true' lat='43.079908132228965' lon='-89.42094548864969' />
+  <node id='-20310' action='modify' visible='true' lat='43.08008536964343' lon='-89.42170113062876' />
+  <node id='-20308' action='modify' visible='true' lat='43.08031788718935' lon='-89.42242813476773' />
+  <node id='-20306' action='modify' visible='true' lat='43.080713005448764' lon='-89.42322956510179' />
+  <node id='-20304' action='modify' visible='true' lat='43.081283727325015' lon='-89.42407106695256' />
+  <node id='-20302' action='modify' visible='true' lat='43.0816788393558' lon='-89.42449181787795' />
+  <node id='-20300' action='modify' visible='true' lat='43.082425155128476' lon='-89.42491256880335' />
+  <node id='-20298' action='modify' visible='true' lat='43.0832592619982' lon='-89.42517303366192' />
+  <node id='-20297' action='modify' visible='true' lat='43.08388849299904' lon='-89.42511292638686' />
+  <node id='-20295' action='modify' visible='true' lat='43.08090712370541' lon='-89.41178454725697' />
+  <node id='-20293' action='modify' visible='true' lat='43.08028625608292' lon='-89.41014112646775' />
+  <node id='-20290' action='modify' visible='true' lat='43.07902566440871' lon='-89.39897140196796' />
+  <node id='-20288' action='modify' visible='true' lat='43.0790445019634' lon='-89.4016973437921' />
+  <node id='-20286' action='modify' visible='true' lat='43.07929285480057' lon='-89.40515419441769' />
+  <node id='-20284' action='modify' visible='true' lat='43.07974816572096' lon='-89.40815768758422' />
+  <node id='-20282' action='modify' visible='true' lat='43.08620493817158' lon='-89.43966603099133'>
+    <tag k='name' v='Eagle Heights' />
+  </node>
+  <node id='-20280' action='modify' visible='true' lat='43.088646745271184' lon='-89.41671480962464'>
+    <tag k='name' v='Picnic Point' />
+  </node>
+  <node id='-20278' action='modify' visible='true' lat='43.07623765594502' lon='-89.43220271968633'>
+    <tag k='name' v='UW Hospital and Clinics' />
+  </node>
+  <node id='-20276' action='modify' visible='true' lat='43.075235228358835' lon='-89.40288815844399'>
+    <tag k='name' v='Bascom Hill' />
+  </node>
+  <node id='-20274' action='modify' visible='true' lat='43.06991059133301' lon='-89.41272034833815'>
+    <tag k='name' v='Camp Randall Stadium' />
+  </node>
+  <node id='-20272' action='modify' visible='true' lat='43.069328975310974' lon='-89.39682879941942'>
+    <tag k='name' v='Kohl Center' />
+  </node>
+  <node id='-20270' action='modify' visible='true' lat='43.07778840269838' lon='-89.41535933602015'>
+    <tag k='name' v='Lakeshore Residence Halls' />
+  </node>
+  <node id='-20268' action='modify' visible='true' lat='43.071341070937606' lon='-89.39928537568618'>
+    <tag k='name' v='Southeast Residence Halls' />
+  </node>
+  <way id='-20299' action='modify' visible='true'>
+    <nd ref='-20297' />
+    <nd ref='-20298' />
+    <nd ref='-20300' />
+    <nd ref='-20302' />
+    <nd ref='-20304' />
+    <nd ref='-20306' />
+    <nd ref='-20308' />
+    <nd ref='-20310' />
+    <nd ref='-20312' />
+    <tag k='name' v='University Bay' />
+  </way>
+  <way id='-20292' action='modify' visible='true'>
+    <nd ref='-20295' />
+    <nd ref='-20293' />
+    <nd ref='-20284' />
+    <nd ref='-20286' />
+    <nd ref='-20288' />
+    <nd ref='-20290' />
+    <tag k='name' v='Lake Mendota' />
+  </way>
+</osm>

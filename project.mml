@@ -1,0 +1,902 @@
+{
+  "bounds": [
+    -89.5853,
+    42.9974,
+    -89.2145,
+    43.1654
+  ],
+  "center": [
+    -89.4043,
+    43.0754,
+    16
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "mapng_interactive",
+    "template_teaser": "{{{id}}}: {{{name}}} {{{object_key}}}",
+    "template_full": "{{{id}}}: {{{name}}} {{{object_key}}}",
+    "fields": [
+      "id",
+      "name",
+      "object_key"
+    ]
+  },
+  "minzoom": 13,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "uw.mss",
+    "palette.mss",
+    "base.mss",
+    "roads.mss",
+    "labels.mss"
+  ],
+  "Layer": [
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-land.zip",
+        "host": "local.uw_map",
+        "id": "land",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "shp",
+      "geometry": "polygon",
+      "id": "land",
+      "name": "land",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/coastline-good.zip"
+      },
+      "class": "shp",
+      "geometry": "polygon",
+      "id": "processed_p",
+      "name": "processed_p",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
+      },
+      "class": "shp",
+      "geometry": "polygon",
+      "id": "shoreline_300",
+      "name": "shoreline_300",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "landuse_gen0",
+        "key_field": "",
+        "project": "osm-bright-imposm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, way_area AS area, COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type\n  FROM planet_osm_polygon\n  WHERE way_area > 100000\n  ORDER BY way_area DESC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "multipolygon",
+      "id": "landuse_gen0",
+      "name": "landuse_gen0",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "landuse_gen1",
+        "key_field": "",
+        "project": "osm-bright-imposm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, way_area AS area, COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type\n  FROM planet_osm_polygon\n  WHERE way_area > 10000\n  ORDER BY way_area DESC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "multipolygon",
+      "id": "landuse_gen1",
+      "name": "landuse_gen1",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "landuse",
+        "key_field": "",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, way_area AS area, COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type\n  FROM planet_osm_polygon\n  ORDER BY way_area DESC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "landuse",
+      "name": "landuse",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "geometry": "linestring",
+      "id": "woodlands_uw",
+      "class": "",
+      "Datasource": {
+        "file": "geojson/woods.json",
+        "id": "woodlands_uw",
+        "project": "uwmm",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "name": "woodlands_uw",
+      "status": "off"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "waterway",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, waterway AS type\n  FROM planet_osm_line\n  WHERE waterway IN ('river', 'canal')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "waterway_low",
+      "name": "waterway_low",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "key_field": "",
+        "table": "( SELECT way, waterway AS type\n  FROM planet_osm_line\n  WHERE waterway IN ('river', 'canal', 'stream', 'ditch', 'drain')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "waterway_high",
+      "name": "waterway_high",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "water_gen0",
+        "key_field": "",
+        "project": "uwmm",
+        "srs": null,
+        "table": "( SELECT way, \"natural\" AS type, way_area AS area\n  FROM planet_osm_polygon\n  WHERE (\"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream'))\n    AND way_area > 10000\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "water_gen0",
+      "name": "water_gen0",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "water_gen1",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, \"natural\" AS type, way_area AS area\n  FROM planet_osm_polygon\n  WHERE (\"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream'))\n    AND way_area > 1000\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "water_gen1",
+      "name": "water_gen1",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "water",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, way_area AS area\n  FROM planet_osm_polygon\n  WHERE \"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "water",
+      "name": "water",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "landuse_overlays",
+        "key_field": "",
+        "project": "osm-bright-imposm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, way_area AS area, COALESCE(leisure) AS type\n  FROM planet_osm_polygon\n  WHERE leisure = 'nature_reserve'\n  ORDER BY way_area DESC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "landuse_overlays",
+      "name": "landuse_overlays",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "admin",
+        "key_field": "",
+        "project": "osm-bright-imposm",
+        "table": "( SELECT way, admin_level\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "admin",
+      "name": "admin",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "geometry_table": "planet_osm_polygon",
+        "srid": 900913,
+        "host": "local.uw_map",
+        "key_field": "",
+        "table": "( SELECT way, \"building\" AS type\n  FROM planet_osm_polygon\n  WHERE building NOT IN ('0','false', 'no')\n  AND osm_id NOT IN (SELECT osm_id FROM map_object_osm_links)\n  ORDER BY ST_YMin(ST_Envelope(way)) DESC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432",
+        "id": "buildings",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "buildings",
+      "name": "buildings",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "aeroway",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, aeroway AS type\n  FROM planet_osm_line\n  WHERE aeroway IN ('apron', 'runway', 'taxiway')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "aeroway",
+      "name": "aeroway",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "tunnel",
+        "key_field": "",
+        "project": "osm-bright-master",
+        "srs": null,
+        "table": "( SELECT way, COALESCE(highway, railway) AS type, 0 AS bridge, access, render, layer, 1 as tunnel,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n    UNION\n    SELECT *, '2_line' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n    UNION\n    SELECT *, '3_inline' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n  ) AS tunnels\n  ORDER BY layer ASC, render ASC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "tunnel",
+      "name": "tunnel",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "turning_circle_case",
+        "key_field": "",
+        "project": "osm-bright-master",
+        "srs": null,
+        "table": "( SELECT way \n  FROM planet_osm_point \n  WHERE highway = 'turning_circle'\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "point",
+      "id": "turning_circle_case",
+      "name": "turning_circle_case",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "roads_high",
+        "key_field": "",
+        "project": "osm-bright-master",
+        "srs": null,
+        "table": "( SELECT way, COALESCE(highway, railway) AS type, 0 AS tunnel, 0 AS bridge, access, 'fill' AS render,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM planet_osm_line\n  WHERE (highway IS NOT NULL OR railway IS NOT NULL)\n    AND (tunnel IS NULL OR tunnel = 'no')\n    AND (bridge IS NULL OR bridge = 'no')\n  ORDER BY z_order\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_high",
+      "name": "roads_high",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "key_field": "",
+        "table": "( SELECT way, highway AS type\n  FROM planet_osm_roads\n  WHERE highway IN ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_med",
+      "name": "roads_med",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "key_field": "",
+        "table": "( SELECT way, highway AS type, bridge, tunnel\n    FROM planet_osm_roads\n    WHERE highway IN ('motorway', 'trunk')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_low",
+      "name": "roads_low",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "key_field": "",
+        "table": "( SELECT way \n  FROM planet_osm_point\n  WHERE highway = 'turning_circle'\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "point",
+      "id": "turning_circle_fill",
+      "name": "turning_circle_fill",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT *, lower(geometryType(geom)) as geometry_type FROM map_objects WHERE geom is not null AND object_type = 'parking_lot' ORDER BY st_area(geom) DESC) AS data",
+        "extent": "",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "dbname": "uw_map",
+        "id": "parking_uw",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "parking_uw",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "parking_uw"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "bridge",
+        "key_field": "",
+        "project": "osm-bright-master",
+        "srs": null,
+        "table": "( SELECT way, COALESCE(highway, railway) AS type, 1 AS bridge, access, render, layer, 0 as tunnel,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n    UNION\n    SELECT *, '2_line' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n    UNION\n    SELECT *, '3_inline' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n  ) AS bridges\n  ORDER BY layer ASC, render ASC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "bridge",
+      "name": "bridge",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "id": "ne_places",
+        "project": "uwmm",
+        "srs": ""
+      },
+      "class": "",
+      "geometry": "point",
+      "id": "ne_places",
+      "name": "ne_places",
+      "srs": "",
+      "srs-name": "autodetect"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "place",
+        "key_field": "",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, place AS type, name, z_order, population\n  FROM planet_osm_point\n  WHERE place in ('country', 'state', 'city', 'town', 'village', 'hamlet', 'suburb', 'neighbourhood', 'locality')\n  ORDER BY population DESC NULLS LAST\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "point",
+      "id": "place",
+      "name": "place",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT id,name,st_pointonsurface(geom) as \"geom\"\nFROM map_objects\nWHERE object_type='parking_lot'\nAND geometryType(geom) = 'POLYGON') AS data",
+        "extent": "",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "dbname": "uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "id": "surface_parking_points",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "surface_parking_points",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "surface_parking_points"
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT *, lower(geometryType(geom)) as geometry_type,st_area(geom) as area FROM map_objects WHERE geom is not null AND object_type = 'building' ORDER BY st_area(geom) DESC) AS data",
+        "extent": "",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "dbname": "uw_map"
+      },
+      "id": "buildings_uw",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "buildings_uw"
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT *, lower(geometryType(geom)) as geometry_type,st_area(geom) as area FROM map_objects WHERE geom is not null AND object_type = 'building_partial' ORDER BY st_area(geom) DESC) AS data",
+        "extent": "",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "dbname": "uw_map"
+      },
+      "id": "buildings_partial_uw",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "buildings_partial_uw"
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT *, lower(geometryType(geom)) as geometry_type FROM map_objects WHERE geom is not null AND (object_type = 'natural_area' OR object_type = 'recreational_area') ORDER BY st_area(geom) DESC) AS data",
+        "extent": "-9959467.70133093,5315746.47,-9951302.27,5326103.46702548",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "dbname": "uw_map",
+        "id": "natural_areas_uw",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "extent_cache": "auto"
+      },
+      "id": "natural_areas_uw",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "natural_areas_uw",
+      "extent": [
+        -89.46742057800292,
+        43.0247937482558,
+        -89.39406926034287,
+        43.092772644220794
+      ],
+      "advanced": {}
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nSELECT  id, name, object_type, lower(geometryType(geom)) as geometry_type, geom, st_area(geom) as area,\n'map_object_' || id::text as object_key\nFROM map_objects\nWHERE geom is not null \nUNION ALL\nSELECT 200000+stop_id as id, 'Stop #'||stop_id::text||' - '||name as name, 'bus_stop' as object_type, 'point' as geometry_type, st_transform(location, 900913) as geom, st_area(st_transform(location, 900913)) as area,\n'bus_stop_' || stop_id::text as object_key\nFROM bus_stops\nWHERE disabled IS FALSE\nORDER BY area DESC\n) AS data",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "dbname": "uw_map",
+        "id": "mapng_interactive",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "extent_cache": "custom"
+      },
+      "id": "mapng_interactive",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "mapng_interactive",
+      "extent": [
+        -89.58506199999998,
+        42.99482700000003,
+        -89.21159999999995,
+        43.16509999999997
+      ],
+      "advanced": {},
+      "geometry": "polygon"
+    },
+    {
+      "geometry": "point",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT * FROM bus_stops WHERE disabled IS FALSE) AS data",
+        "extent": "",
+        "key_field": "id",
+        "geometry_field": "location",
+        "host": "local.uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "dbname": "uw_map",
+        "id": "buses",
+        "project": "uwmm",
+        "srs": null
+      },
+      "id": "buses",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "buses"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384,5311184.49674099,-9930989.8848532,5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "area_label",
+        "key_field": "",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type,\n    name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND amenity != 'parking'\n    AND way && !bbox!\n    AND ST_IsValid(way)\n    AND osm_id NOT IN(SELECT osm_id FROM map_object_osm_links)\n\n  UNION ALL\n\n  SELECT 'building' AS type, name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND building NOT IN ('', 'no', '0', 'false')\n    AND way && !bbox!\n    AND ST_IsValid(way)\n    AND osm_id NOT IN(SELECT osm_id FROM map_object_osm_links)\n  ORDER BY area DESC\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432",
+        "extent_cache": "auto",
+        "srid": "900913"
+      },
+      "class": "",
+      "geometry": "point",
+      "id": "area_label",
+      "name": "area_label",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "extent": [
+        -89.58506199999998,
+        42.99482700000003,
+        -89.21159999999995,
+        43.16509999999997
+      ],
+      "advanced": {
+        "srid": "900913"
+      }
+    },
+    {
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT id, COALESCE(label, name) as name, object_type, lower(ST_GeometryType(geom)) as geometry_type, ST_Area(geom) as area, ST_PointOnSurface(geom) as geom, semantic_zoom FROM map_objects WHERE st_isValid(geom) and geom IS NOT NULL) AS data",
+        "extent": "",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "host": "local.uw_map",
+        "dbname": "uw_map",
+        "user": "uw_map",
+        "port": "5432",
+        "id": "uw_labels",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "srid": 900913
+      },
+      "id": "uw_labels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "uw_labels",
+      "geometry": "point"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -89.43966603099133,
+        43.069328975310974,
+        -89.39682879941942,
+        43.088646745271184
+      ],
+      "id": "uw_macro_labels",
+      "class": "",
+      "Datasource": {
+        "file": "geojson/uw_macro_labels.json"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "uw_macro_labels"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "motorway_label",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, highway AS type, name, ref, oneway, CHAR_LENGTH(ref) AS reflen\n    FROM planet_osm_line\n    WHERE highway IN ('motorway', 'trunk')\n      AND (name <> '' OR ref <> '')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "motorway_label",
+      "name": "motorway_label",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "mainroad_label",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, highway AS type, name, oneway\n  FROM planet_osm_line\n  WHERE (name <> '' OR oneway IN ('yes', 'true', '1', '-1'))\n    AND highway IN ('primary', 'secondary', 'tertiary')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "mainroad_label",
+      "name": "mainroad_label",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "minorroad_label",
+        "key_field": "",
+        "project": "uwmm",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, highway AS type, name, oneway\n  FROM planet_osm_line\n  WHERE (name <> '' OR oneway IN ('yes', 'true', '1', '-1'))\n    AND highway IN ('residential', 'unclassified', 'road', 'living_street', 'unknown')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "minorroad_label",
+      "name": "minorroad_label",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "key_field": "",
+        "table": "( SELECT way, waterway AS type\n  FROM planet_osm_line\n  WHERE waterway IN ('river', 'canal', 'stream')\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "waterway_med",
+      "name": "waterway_med",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913"
+    },
+    {
+      "Datasource": {
+        "dbname": "uw_map",
+        "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",
+        "geometry_field": "way",
+        "host": "local.uw_map",
+        "id": "waterway_label",
+        "key_field": "",
+        "project": "foss4g-2011",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT way, waterway AS type, name, ROUND(ST_Length(way)) AS length\n  FROM planet_osm_line\n  WHERE waterway IN ('canal', 'river', 'stream') \n    AND name <> ''\n) AS data",
+        "type": "postgis",
+        "user": "uw_map",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "waterway_label",
+      "name": "waterway_label",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on"
+    }
+  ],
+  "scale": 1,
+  "metatile": 6,
+  "attribution": "Data © OpenStreetMap (and) contributors, CC-BY-SA",
+  "description": "",
+  "name": "UWMM",
+  "legend": ""
+}

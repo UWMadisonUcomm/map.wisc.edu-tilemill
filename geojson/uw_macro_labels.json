@@ -1,0 +1,56 @@
+{"type": "FeatureCollection",
+"features": [
+{"type": "Feature",
+	"properties": {
+		"name": "Southeast Residence Halls"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.39928537568618, 43.071341070937606]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Camp Randall Stadium"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.41272034833815, 43.06991059133301]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Bascom Hill"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.40288815844399, 43.075235228358835]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Lakeshore Residence Halls"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.41535933602015, 43.07778840269838]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Eagle Heights"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.43966603099133, 43.08620493817158]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Kohl Center"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.39682879941942, 43.069328975310974]}},
+{"type": "Feature",
+	"properties": {
+		"name": "UW Hospital and Clinics"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.43220271968633, 43.07623765594502]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Picnic Point"
+	},
+	"geometry": {"type": "Point", "coordinates": [-89.41671480962464, 43.088646745271184]}},
+{"type": "Feature",
+	"properties": {
+		"name": "Lake Mendota",
+		"note": "waterlabel"
+	},
+	"geometry": {"type": "LineString", "coordinates": [[-89.41178454725697, 43.08090712370541], [-89.41014112646775, 43.08028625608292], [-89.40815768758422, 43.07974816572096], [-89.40515419441769, 43.07929285480057], [-89.4016973437921, 43.0790445019634], [-89.39897140196796, 43.07902566440871]]}},
+{"type": "Feature",
+	"properties": {
+		"name": "University Bay",
+		"note": "waterlabel"
+	},
+	"geometry": {"type": "LineString", "coordinates": [[-89.42511292638686, 43.08388849299904], [-89.42517303366192, 43.0832592619982], [-89.42491256880335, 43.082425155128476], [-89.42449181787795, 43.0816788393558], [-89.42407106695256, 43.081283727325015], [-89.42322956510179, 43.080713005448764], [-89.42242813476773, 43.08031788718935], [-89.42170113062876, 43.08008536964343], [-89.42094548864969, 43.079908132228965]]}}
+]
+}
