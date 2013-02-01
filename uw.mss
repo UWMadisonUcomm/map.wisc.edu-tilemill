@@ -28,7 +28,7 @@
 #roads_high[zoom>=11][zoom<=20],
 #tunnel[render='3_inline'][zoom>=11][zoom<=20],
 #bridge[render='3_inline'][zoom>=11][zoom<=20]{
-  [stylegroup='noauto']   { 
+  [stylegroup='noauto']   {
     line-color: #fcfcfc;
   }
   [zoom=13] {
@@ -436,23 +436,23 @@
 /* ================================================================== */
 /* campus woodlands (from geojson) */
 /* ================================================================== */
-#woodlands_uw[zoom>14] {
-    polygon-fill: @wooded_uw;
-    polygon-pattern-file:url(img/uw/forest_green-light-100.png);
-    [zoom=17] {
-      polygon-pattern-file:url(img/uw/forest_green-200.png);
-    }
-    [zoom=18] {
-      polygon-pattern-file:url(img/uw/forest_green-400.png);
-    }
-    line-width: 4;
-    line-color: #839b7c;
-    line-opacity: 0.1;
-    line-join: round;
-    ::blur1 {line-color: #839b7c;line-width: 3; line-opacity: 0.2;}
-    ::blur2 {line-color: #839b7c;line-width: 2; line-opacity: 0.3;}
-    ::blur3 {line-color: #839b7c;line-width: 1; line-opacity: 0.4;}
-}
+// #woodlands_uw[zoom>14] {
+//     polygon-fill: @wooded_uw;
+//     polygon-pattern-file:url(img/textures/grass.png);
+//     [zoom=17] {
+//       polygon-pattern-file:url(img/uw/forest_green-200.png);
+//     }
+//     [zoom=18] {
+//       polygon-pattern-file:url(img/uw/forest_green-400.png);
+//     }
+//     line-width: 4;
+//     line-color: #839b7c;
+//     line-opacity: 0.1;
+//     line-join: round;
+//     ::blur1 {line-color: #839b7c;line-width: 3; line-opacity: 0.2;}
+//     ::blur2 {line-color: #839b7c;line-width: 2; line-opacity: 0.3;}
+//     ::blur3 {line-color: #839b7c;line-width: 1; line-opacity: 0.4;}
+// }
 
 /* ================================================================== */
 /* Water
@@ -465,6 +465,13 @@
  * ::glow3 { line-color: darken(@water,5%); line-width: 3; line-opacity: 1;}
  *}
 */
+
+#water_gen0[zoom>3][zoom<=9],
+#water_gen1[zoom>9][zoom<=12],
+#water[zoom>12] {
+  polygon-pattern-file:url(img/textures/water.png);
+  polygon-pattern-alignment:global;
+}
 
 /* ================================================================== */
 /* Buses */
@@ -504,5 +511,18 @@
     [zoom=16]   { marker-width: 15; }
     [zoom=17]   { marker-width: 21; }
     [zoom>=18]  { marker-width: 27; }
+  }
+}
+
+/**
+ * Woodlands image
+ */
+#landuse_gen0[zoom>3][zoom<=9],
+#landuse_gen1[zoom>9][zoom<=12],
+#landuse[zoom>12] {
+  [type='forest'],
+  [type='wood'] {
+    // polygon-fill: @wooded;
+    polygon-pattern-file:url(img/textures/grass.png);
   }
 }
