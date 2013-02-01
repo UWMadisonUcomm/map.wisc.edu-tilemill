@@ -524,5 +524,6 @@
   [type='wood'] {
     // polygon-fill: @wooded;
     polygon-pattern-file:url(img/textures/grass.png);
+    polygon-smooth:1;
   }
 }
