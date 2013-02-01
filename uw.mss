@@ -15,8 +15,8 @@
     [stylegroup='noauto']   { line-width: 0; }
   }
   [zoom>=18] {
-    [stylegroup='noauto']   { 
-      line-width: 0; 
+    [stylegroup='noauto']   {
+      line-width: 0;
       /* [type="cycleway"] {
         line-color: #abdfe7;
         line-width: @rdz18_min / 4 + 4;
@@ -115,12 +115,17 @@
           text-clip:false;
           text-size: 23;
         }
+        // Switch to point placement for this zoom
+        // level due to tile size problems
         [zoom = 18] {
-          text-dy: -240;
+          text-placement: point;
           text-spacing: 500000;
           text-character-spacing: 0;
           text-clip:false;
           text-size: 25;
+          text-dy: 200;
+          text-dx: -10;
+          text-orientation: -4;
         }
       }
       [name='University Bay'] {
@@ -207,6 +212,18 @@
       text-allow-overlap: true;
       text-halo-radius: 1.5;
       text-dy: 10;
+      [name='Picnic Point'] {
+        text-dx: 120;
+        text-dy: 40;
+      }
+      [name="Big Woods"] {
+        text-dx: 5;
+        text-dy: 15;
+      }
+      [name="Frautschi Point"] {
+        text-dx: 0;
+        text-dy: 5;
+      }
    }
     [zoom >= 17][semantic_zoom<=17] {
       text-size: 11;
@@ -219,7 +236,43 @@
       // Allows us to show more labels
       text-allow-overlap: true;
       text-halo-radius: 1.5;
-      text-dy: 10;
+      text-dy: 20;
+      [name='Picnic Point'] {
+        text-dx: 250;
+        text-dy: 75;
+      }
+      [name="Caretaker\'s Woods"] {
+        text-dx: 5;
+        text-dy: 25;
+      }
+      [name="Second Point Woods"] {
+        text-dx: -5;
+        text-dy: 45;
+      }
+      [name="Frautschi Point"] {
+        text-dx: 0;
+        text-dy: 5;
+      }
+      [name="Eagle Heights Woods"] {
+        text-dx: 0;
+        text-dy: 9;
+      }
+      [name="Big Woods"] {
+        text-dx: 19;
+        text-dy: 28;
+      }
+      [name="Bill\'s Woods"] {
+        text-dx: 0;
+        text-dy: 17;
+      }
+      [name="Tent Colony Woods"] {
+        text-dx: 2;
+        text-dy: 4;
+      }
+      [name="Wally Bauman Woods"] {
+        text-dx: -4;
+        text-dy: 24;
+      }
     }
     [zoom >= 18][semantic_zoom<=19] {
       text-size: 11;
@@ -233,6 +286,42 @@
       text-allow-overlap: true;
       text-halo-radius: 1.5;
       text-dy: 10;
+      [name='Picnic Point'] {
+        text-dx: 530;
+        text-dy: 134;
+      }
+      [name="Caretaker\'s Woods"] {
+        text-dx: 5;
+        text-dy: 37;
+      }
+      [name="Second Point Woods"] {
+        text-dx: -5;
+        text-dy: 78;
+      }
+      [name="Frautschi Point"] {
+        text-dx: 0;
+        text-dy: 0;
+      }
+      [name="Eagle Heights Woods"] {
+        text-dx: 2;
+        text-dy: 3;
+      }
+      [name="Big Woods"] {
+        text-dx: 72;
+        text-dy: 43;
+      }
+      [name="Bill\'s Woods"] {
+        text-dx: 1;
+        text-dy: 17;
+      }
+      [name="Tent Colony Woods"] {
+        text-dx: 2;
+        text-dy: -2;
+      }
+      [name="Wally Bauman Woods"] {
+        text-dx: -4;
+        text-dy: 32;
+      }
     }
   }
 }
@@ -246,6 +335,15 @@
   }
   [zoom>=17][area>20000] { /*this sizes down some OSM labels showing up in campus */
     text-size: 11;
+  }
+}
+
+/* ================================================================== */
+/* klduge fix for Marsh Lane */
+/* ================================================================== */
+#minorroad_label[zoom>16] {
+  [name='Marsh Ln'] {
+    text-clip: false;
   }
 }
 
@@ -278,6 +376,19 @@
 #natural_areas_uw {
   polygon-fill: @grass;
   polygon-opacity: 0;
+
+  [name='Picnic Point'],[name="Bill\'s Woods"],[name="Big Woods"],[name="Caretaker\'s Woods"],[name="Frautschi Point"],[name="Wally Bauman Woods"],[name="Eagle Heights Woods"],[name="Tent Colony Woods"],[name="Second Point Woods"] {
+    [zoom >= 15] {
+      point-placement: interior;
+      point-file: url(img/uw/park-12.png);
+    }
+    [zoom = 16] {
+      point-file: url(img/uw/park-18.png);
+    }
+    [zoom >= 17] {
+      point-file: url(img/uw/park-24.png);
+    }
+  }
   [geometry_type='point'] {
     [zoom = 16] {
       point-file: url(img/uw/park-18.png);

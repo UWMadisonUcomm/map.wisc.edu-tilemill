@@ -1,0 +1,1 @@
+wget --timeout=0 "http://www.overpass-api.de/api/xapi?map?bbox=-89.6037,42.9642,-89.1663,43.1799" -O madison.osm

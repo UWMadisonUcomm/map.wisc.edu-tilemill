@@ -894,7 +894,7 @@
     }
   ],
   "scale": 1,
-  "metatile": 8,
+  "metatile": 6,
   "attribution": "Data © OpenStreetMap (and) contributors, CC-BY-SA",
   "description": "",
   "name": "UWMM",
