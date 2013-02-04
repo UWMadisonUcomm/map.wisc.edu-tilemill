@@ -260,6 +260,14 @@
 // =====================================================================
 
 #area_label {
+
+  // NOTE:: Don't display the UW-Madison label when we're greater than 15
+  [name='University of Wisconsin-Madison'][zoom >= 15] {
+    text-name: "";
+    text-face-name:@sans;
+    text-size: 11;
+  }
+
   // Bring in labels gradually as one zooms in, bases on polygon area
   [zoom>=10][area>102400000],
   [zoom>=11][area>25600000],
@@ -310,7 +318,8 @@
   [zoom=17][area>20000],
   [zoom=18][area>5000] {
     text-name: "[name]";
-    text-size: 13;
+    // text-size: 13;
+    text-size: 11;
     text-wrap-width: 60;
     text-character-spacing: 1;
     text-halo-radius: 2;
@@ -327,6 +336,10 @@
     text-size: 20;
     text-character-spacing: 3;
     text-wrap-width: 180;
+  }
+  // NOTE:: UW Special style for areas on campus
+  [zoom>=17][area>20000] {
+    text-size: 11;
   }
 }
 
@@ -449,6 +462,11 @@
   text-halo-radius:1;
   text-min-distance:60;
   text-size:11;
+
+  // NOTE:: UW fix for Marsh lane tile clipping
+  [name='Marsh Ln'] {
+    text-clip: false;
+  }
 }
 
 /* ================================================================== */

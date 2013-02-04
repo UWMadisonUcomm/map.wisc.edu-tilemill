@@ -1,57 +1,4 @@
 /* ================================================================== */
-/* walkways -- i.e. noauto */
-/* ================================================================== */
-#roads_high::outline[zoom>=11][zoom<=20],
-#tunnel[render='1_outline'][zoom>=11][zoom<=20],
-#bridge[render='1_outline'][zoom>=11][zoom<=20]{
-  [stylegroup='noauto']   { line-color: #d5d2c3;  }
-  [zoom=15] {
-    [stylegroup='noauto']   { line-width: 0; }
-  }
-  [zoom=16] {
-    [stylegroup='noauto']   { line-width: 0; }
-  }
-  [zoom>=17] {
-    [stylegroup='noauto']   { line-width: 0; }
-  }
-  [zoom>=18] {
-    [stylegroup='noauto']   {
-      line-width: 0;
-      /* [type="cycleway"] {
-        line-color: #abdfe7;
-        line-width: @rdz18_min / 4 + 4;
-      } */
-    }
-  }
-}
-
-#roads_high[zoom>=11][zoom<=20],
-#tunnel[render='3_inline'][zoom>=11][zoom<=20],
-#bridge[render='3_inline'][zoom>=11][zoom<=20]{
-  [stylegroup='noauto']   { 
-    line-color: #fcfcfc;
-  }
-  [zoom=13] {
-    [stylegroup='noauto']   { line-width: @rdz13_min / 4; line-dasharray: 0,0; }
-  }
-  [zoom=14] {
-    [stylegroup='noauto']   { line-width: @rdz14_min / 4; line-dasharray: 0,0; }
-  }
-  [zoom=15] {
-    [stylegroup='noauto']   { line-width: @rdz15_min / 4; line-dasharray: 0,0; }
-  }
-  [zoom=16] {
-    [stylegroup='noauto']   { line-width: @rdz16_min / 4; line-dasharray: 0,0; }
-  }
-  [zoom=17] {
-    [stylegroup='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 0,0; }
-  }
-  [zoom>=18] {
-    [stylegroup='noauto']   { line-width: @rdz18_min / 4; line-dasharray: 0,0; }
-  }
-}
-
-/* ================================================================== */
 /* UW buildings */
 /* ================================================================== */
 #buildings_uw[geometry_type='polygon'],#buildings_uw[geometry_type='multipolygon'] {
@@ -327,25 +274,16 @@
 }
 
 /* labels we do not want to show */
-#area_label {
-  [type='university'][name='University of Wisconsin-Madison'][zoom >= 15],[name='UW Medflight Backup Landing Area'][name='Lot 75 (UW Hospital Ramp)'] {
-    text-name: "";
-    text-face-name:@sans;
-    text-size: 11;
-  }
-  [zoom>=17][area>20000] { /*this sizes down some OSM labels showing up in campus */
-    text-size: 11;
-  }
-}
-
-/* ================================================================== */
-/* klduge fix for Marsh Lane */
-/* ================================================================== */
-#minorroad_label[zoom>16] {
-  [name='Marsh Ln'] {
-    text-clip: false;
-  }
-}
+// #area_label {
+//   [type='university'][name='University of Wisconsin-Madison'][zoom >= 15],[name='UW Medflight Backup Landing Area'][name='Lot 75 (UW Hospital Ramp)'] {
+//     text-name: "";
+//     text-face-name:@sans;
+//     text-size: 11;
+//   }
+//   [zoom>=17][area>20000] { /*this sizes down some OSM labels showing up in campus */
+//     text-size: 11;
+//   }
+// }
 
 /* ================================================================== */
 /* parking lots that are points */
