@@ -49,7 +49,7 @@ as well. */
   }
 }
 
-/* At higher levels the roads become more complex. We're now showing 
+/* At higher levels the roads become more complex. We're now showing
 more than just automobile routes - railways, footways, and cycleways
 come in as well.
 
@@ -65,7 +65,11 @@ come in as well.
 
 /* ---- Casing ----------------------------------------------- */
 
-#roads_high::outline[zoom>=11][zoom<=20],
+// NOTE:: UW Removed the ::outline override for #roads_high
+// Because we're not rendering a dashed line over this grey
+// background
+
+// #roads_high::outline[zoom>=11][zoom<=20],
 #tunnel[render='1_outline'][zoom>=11][zoom<=20],
 #bridge[render='1_outline'][zoom>=11][zoom<=20]{
   /* -- colors & styles -- */
@@ -101,7 +105,7 @@ come in as well.
     line-color: fadeout(@land,50%);
     [bridge=1] { line-color: @secondary_case * 0.8; }
   }
-  [tunnel=1] { line-dasharray: 3,3; }        
+  [tunnel=1] { line-dasharray: 3,3; }
   /* -- widths -- */
   [zoom=11] {
     [stylegroup='motorway'] { line-width: @rdz11_maj + 2; }
@@ -203,7 +207,7 @@ come in as well.
     line-color: @rail_line;
     line-dasharray: 1,1;
     [type='subway'] { line-opacity: 0.67; }
-    [zoom>15] { line-dasharray: 1,2; } 
+    [zoom>15] { line-dasharray: 1,2; }
   }
   [stylegroup='noauto'],
   [stylegroup='service'],
@@ -241,7 +245,7 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz13_med; }
     [stylegroup='minorroad']{ line-width: @rdz13_min; }
     [stylegroup='service']  { line-width: @rdz13_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz13_min / 4; line-dasharray: 1,1; }
+    [stylegroup='noauto']   { line-width: @rdz13_min / 4 }
     [stylegroup='railway']  { line-width: 0.8; }
   }
   [zoom=14] {
@@ -249,7 +253,7 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz14_med; }
     [stylegroup='minorroad']{ line-width: @rdz14_min; }
     [stylegroup='service']  { line-width: @rdz14_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz14_min / 4; line-dasharray: 1,1; }
+    [stylegroup='noauto']   { line-width: @rdz14_min / 4 }
     [stylegroup='railway']  { line-width: 1; }
   }
   [zoom=15] {
@@ -257,7 +261,7 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz15_med; }
     [stylegroup='minorroad']{ line-width: @rdz15_min; }
     [stylegroup='service']  { line-width: @rdz15_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz15_min / 4; line-dasharray: 1,1; }
+    [stylegroup='noauto']   { line-width: @rdz15_min / 4 }
     [stylegroup='railway']  { line-width: 1.5; }
   }
   [zoom=16] {
@@ -265,7 +269,7 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz16_med; }
     [stylegroup='minorroad']{ line-width: @rdz16_min; }
     [stylegroup='service']  { line-width: @rdz16_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz16_min / 4; line-dasharray: 2,1; }
+    [stylegroup='noauto']   { line-width: @rdz16_min / 4 }
     [stylegroup='railway']  { line-width: 2; }
   }
   [zoom=17] {
@@ -273,7 +277,7 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz17_med; }
     [stylegroup='minorroad']{ line-width: @rdz17_min; }
     [stylegroup='service']  { line-width: @rdz17_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 2,2; }
+    [stylegroup='noauto']   { line-width: @rdz17_min / 4 }
     [stylegroup='railway']  { line-width: 3; }
   }
   [zoom>=18] {
@@ -281,7 +285,7 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz18_med; }
     [stylegroup='minorroad']{ line-width: @rdz18_min; }
     [stylegroup='service']  { line-width: @rdz18_min / 2; }
-    [stylegroup='noauto']   { line-width: @rdz18_min / 4; line-dasharray: 3,3; }
+    [stylegroup='noauto']   { line-width: @rdz18_min / 4 }
     [stylegroup='railway']  { line-width: 4; }
   }
 }
