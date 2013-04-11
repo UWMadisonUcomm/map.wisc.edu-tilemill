@@ -851,6 +851,32 @@
       "status": "on"
     },
     {
+      "geometry": "linestring",
+      "extent": [
+        -89.74551292686714,
+        42.87537053548564,
+        -89.02252596899952,
+        43.29370990201455
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nSELECT osm_id, way, name, COALESCE(highway, railway) AS type\nFROM planet_osm_line\nWHERE osm_id IN(175124213)\n) as data",
+        "key_field": "osm_id",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "-9990424.8,5293021.17,-9909942.26,5356784.88",
+        "host": "local.uw_map",
+        "dbname": "uw_map",
+        "user": "uw_map"
+      },
+      "id": "uw_roads",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "uw_roads"
+    },
+    {
       "Datasource": {
         "dbname": "uw_map",
         "extent": "-9972563.48452384 5311184.49674099 -9930989.8848532 5337135.60893017",

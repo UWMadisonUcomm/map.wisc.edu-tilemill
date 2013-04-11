@@ -15,6 +15,20 @@
   line-color: #dfcfc4;
 }
 
+/**
+  * Special styling for hand picked service roads
+  * hand picked osm_ids in the layer query
+  */
+#uw_roads[zoom>15] {
+  text-name:'[name]';
+  text-face-name:@sans;
+  text-placement:line;
+  text-size:11;
+  text-fill:@road_text;
+  text-halo-fill:@road_halo;
+  text-halo-radius:1;
+}
+
 //a geojson layer with a limited number of campus region labels
 #uw_macro_labels {
  [zoom > 13][zoom < 16] {
