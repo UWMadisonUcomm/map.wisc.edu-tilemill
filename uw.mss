@@ -40,7 +40,7 @@
     text-size: 14;
     text-line-spacing: -5.0;
     text-wrap-width:120;
-    text-fill: #333;
+    text-fill: #444;
     text-halo-fill: #fff;
   }
   [zoom = 15] {
@@ -107,39 +107,56 @@
   [object_type='building'],[object_type='building_partial'] {
     [zoom >= 16][semantic_zoom=16] {
       text-name: "[name]";
-      text-halo-radius: 1.5;
+      text-halo-radius: 1;
       text-face-name:@sans;
       // Allows us to show more labels
       text-allow-overlap: true;
       text-size: 11;
       text-line-spacing: -3.0;
       text-wrap-width:30;
-      text-fill: #555;
+      text-fill: #444;
       text-halo-fill: #fff;
+      [name="Kronshage Residence Hall"] {
+        text-name: "[name]";
+      }
     }
     [zoom >= 17][semantic_zoom<=17] {
       text-name: "[name]";
-      text-halo-radius: 1;
+      text-halo-radius: .75;
       text-face-name:@sans;
       // Allows us to show more labels
       text-allow-overlap: true;
-      text-size: 11;
+      text-size: 12;
       text-line-spacing: -1.0;
       text-wrap-width:45;
-      text-fill: #555;
+      text-fill: #444;
       text-halo-fill: #fff;
+      [name="Signe Skott Cooper Hall"] {
+        text-dx: 1;
+        text-dy: 10;
+      }
+      [name="Kronshage Residence Hall"] {
+        text-name: "[name]";
+      }
     }
     [zoom >= 18][semantic_zoom<=19] {
       text-name: "[name]";
-      text-halo-radius: 1;
+      text-halo-radius: .75;
       text-face-name:@sans;
       // Allows us to show more labels
       text-allow-overlap: true;
-      text-size: 11;
+      text-size: 14;
       text-line-spacing: 0;
       text-wrap-width:60;
-      text-fill: #555;
+      text-fill: #444;
       text-halo-fill: #fff;
+      [name="Signe Skott Cooper Hall"] { 
+        text-wrap-width:100;
+        text-dy: 20;
+      }
+      [name="Kronshage Residence Hall"] {
+        text-name: "";
+      }
     }
   }
 
@@ -171,7 +188,7 @@
       text-halo-fill: #fff;
       // Allows us to show more labels
       text-allow-overlap: true;
-      text-halo-radius: 1.5;
+      text-halo-radius: 1;
       text-dy: 10;
       [name='Picnic Point'] {
         text-dx: 120;
@@ -196,13 +213,13 @@
       text-halo-fill: #fff;
       // Allows us to show more labels
       text-allow-overlap: true;
-      text-halo-radius: 1.5;
+      text-halo-radius: 1;
       text-dy: 20;
       [name='Picnic Point'] {
         text-dx: 250;
         text-dy: 75;
       }
-      [name="Caretaker\'s Woods"] {
+      [name="Caretaker's Woods"] {
         text-dx: 5;
         text-dy: 25;
       }
@@ -222,7 +239,7 @@
         text-dx: 19;
         text-dy: 28;
       }
-      [name="Bill\'s Woods"] {
+      [name="Bill's Woods"] {
         text-dx: 0;
         text-dy: 17;
       }
@@ -251,7 +268,7 @@
         text-dx: 530;
         text-dy: 134;
       }
-      [name="Caretaker\'s Woods"] {
+      [name="Caretaker's Woods"] {
         text-dx: 5;
         text-dy: 37;
       }
@@ -271,7 +288,7 @@
         text-dx: 72;
         text-dy: 43;
       }
-      [name="Bill\'s Woods"] {
+      [name="Bill's Woods"] {
         text-dx: 1;
         text-dy: 17;
       }
@@ -322,6 +339,14 @@
   line-width: 3;
 }
 
+#natural_areas_uw[name="Camp Randall Stadium field"] {
+  polygon-fill: @grass;
+  polygon-opacity: 1;
+  text-name: "";
+  text-face-name:@sans;
+  text-wrap-width:50;
+}
+
 /* ================================================================== */
 /* Natural areas */
 /* ================================================================== */
@@ -329,7 +354,7 @@
   polygon-fill: @grass;
   polygon-opacity: 0;
 
-  [name='Picnic Point'],[name="Bill\'s Woods"],[name="Big Woods"],[name="Caretaker\'s Woods"],[name="Frautschi Point"],[name="Wally Bauman Woods"],[name="Eagle Heights Woods"],[name="Tent Colony Woods"],[name="Second Point Woods"] {
+  [name='Picnic Point'],[name="Bill's Woods"],[name="Big Woods"],[name="Caretaker's Woods"],[name="Frautschi Point"],[name="Wally Bauman Woods"],[name="Eagle Heights Woods"],[name="Tent Colony Woods"],[name="Second Point Woods"] {
     [zoom >= 15] {
       point-placement: interior;
       point-file: url(img/uw/park-12.png);
@@ -424,15 +449,16 @@
 #buses {
   point-allow-overlap:true;
   [zoom < 16]  { point-opacity: 0; }
-  [zoom = 16]  { point-file: url(img/uw/bus-blue-9.png); }
-  [zoom = 17]  { point-file: url(img/uw/bus-blue-12.png); }
-  [zoom >= 18] { point-file: url(img/uw/bus-blue-14.png); }
+  [zoom = 16]  { point-file: url(img/uw/bus-blue-7.png); }
+  [zoom = 17]  { point-file: url(img/uw/bus-blue-11.png); }
+  [zoom >= 18] { point-file: url(img/uw/bus-blue-13.png); }
 }
+
 
 /**
  * The interactive Layer
 */
-#mapng_interactive * {
+#mapng_interactive {
 
   /** Map Objects **/
   [object_type !='bus_stop'] {
